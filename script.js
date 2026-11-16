@@ -1,8 +1,14 @@
 const people = {
-  philipp: { name: "Philipp Schwarz", role: "Partner / Practice Lead", location: "Frankfurt / Germany", initials: "PS", tags: ["Airline commercial", "Operations strategy", "Integration"] },
-  lena: { name: "Lena Krutz", role: "Senior Manager", location: "Frankfurt / Germany", initials: "LK", tags: ["CRM transition", "Passenger service", "Transformations"] },
-  chris: { name: "Chris Villmann", role: "Senior Manager", location: "Hamburg / Germany", initials: "CV", tags: ["IT PMO", "Post-merger integration", "Process optimization"] },
-  jonas: { name: "Jonas Schaedlich", role: "Senior Business Consultant", location: "Frankfurt / Germany", initials: "JS", tags: ["Airport planning", "Ground handling", "Cutover management"] }
+  philipp: { name: "Philipp Schwarz", role: "Partner / Practice Lead", location: "Frankfurt / Germany", initials: "PS", email: "philipp.schwarz@bearingpoint.com" },
+  chris: { name: "Chris Villmann", role: "Senior Manager", location: "Hamburg / Germany", initials: "CV", email: "chris.villmann@bearingpoint.com" },
+  lena: { name: "Lena Krutz", role: "Senior Manager", location: "Frankfurt / Germany", initials: "LK", email: "lena.krutz@bearingpoint.com" },
+  julia: { name: "Julia Ortstadt", role: "Senior Business Consultant", location: "Frankfurt / Germany", initials: "JO", email: "julia.ortstadt@bearingpoint.com" },
+  jasmin: { name: "Jasmin Diederichs", role: "Senior Business Consultant", location: "D\u00fcsseldorf / Germany", initials: "JD", email: "jasmin.diederichs@bearingpoint.com" },
+  emilia: { name: "Emilia Zimmer", role: "Business Consultant", location: "Berlin / Germany", initials: "EZ", email: "emilia.zimmer@bearingpoint.com" },
+  florian: { name: "Florian Kuhn", role: "Business Consultant", location: "Stuttgart / Germany", initials: "FK", email: "florian.kuhn@bearingpoint.com" },
+  jonas: { name: "Jonas Sch\u00e4dlich", role: "Senior Business Consultant", location: "Frankfurt / Germany", initials: "JS", email: "jonas.schaedlich@bearingpoint.com" },
+  valentin: { name: "Valentin Heng", role: "Business Consultant", location: "Frankfurt / Germany", initials: "VH", email: "valentin.heng@bearingpoint.com" },
+  georgi: { name: "Georgi Devrisashvili", role: "Business Consultant", location: "Frankfurt / Germany", initials: "GD", email: "georgi.devrisashvili@bearingpoint.com" }
 };
 
 const profile = document.querySelector(".team-profile");
@@ -18,9 +24,10 @@ document.querySelectorAll(".team-member").forEach((button) => {
     });
     profile.querySelector(".profile-location").textContent = person.location;
     profile.querySelector(".profile-monogram").textContent = person.initials;
-    profile.querySelector("h3").textContent = person.name;
-    profile.querySelector("h3 + p").textContent = person.role;
-    profile.querySelector(".profile-tags").innerHTML = person.tags.map((tag) => `<span>${tag}</span>`).join("");
+    profile.querySelector("#profile-name").textContent = person.name;
+    profile.querySelector("#profile-role").textContent = person.role;
+    profile.querySelector("#profile-email").href = `mailto:${person.email}`;
+    profile.querySelector("#profile-email").textContent = person.email;
   });
 });
 
