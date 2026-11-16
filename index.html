@@ -26,6 +26,7 @@
       <section class="hero">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-flight" aria-hidden="true"><span></span><span></span><span></span></div>
+        <svg class="flight-route" viewBox="0 0 1200 500" aria-hidden="true"><path d="M 720 450 C 780 330, 870 370, 910 240 S 1060 120, 1170 110" /><circle r="6"><animateMotion dur="7s" repeatCount="indefinite" path="M 720 450 C 780 330, 870 370, 910 240 S 1060 120, 1170 110" /></circle></svg>
         <div class="hero-copy">
           <p class="eyebrow light">Aviation practice / Europe</p>
           <h1>Make every<br /><em>connection</em> count.</h1>
@@ -36,6 +37,7 @@
           <span>Strategy</span><span>Delivery</span><span>Technology</span>
         </div>
         <div class="hero-coordinate">50.1109&deg; N / 8.6821&deg; E</div>
+        <div class="hero-stats"><span><strong>11+</strong> aviation specialists</span><span><strong>4</strong> capability areas</span><span><strong>Europe</strong> wide delivery</span></div>
       </section>
 
       <section id="expertise" class="section expertise">
@@ -46,22 +48,25 @@
         </div>
         <div class="capability-grid">
           <article class="capability capability-dark">
-            <p class="capability-number">01</p>
+            <div class="capability-top"><p class="capability-number">01</p><svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M4 24h40M24 4v40M10 18l14 6 14-6M10 30l14-6 14 6" /></svg></div>
             <h3>Airlines</h3>
             <p>From network and revenue management to passenger servicing, crew, and flight operations.</p>
             <ul><li>Commercial transformation</li><li>Customer & loyalty</li><li>Integrated operations</li></ul>
+            <a class="capability-link" href="#team">Meet our airline experts <span>&rarr;</span></a>
           </article>
           <article class="capability">
-            <p class="capability-number">02</p>
+            <div class="capability-top"><p class="capability-number">02</p><svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M7 40V17h34v23M4 17h40M14 17V8h20v9M14 27h6M28 27h6" /></svg></div>
             <h3>Airports</h3>
             <p>Better passenger flow, robust airside operations, and infrastructure that earns its keep.</p>
             <ul><li>Terminal & passenger flow</li><li>Ground handling</li><li>Asset & capacity planning</li></ul>
+            <a class="capability-link" href="#team">Meet our airport experts <span>&rarr;</span></a>
           </article>
           <article class="capability capability-accent">
-            <p class="capability-number">03</p>
+            <div class="capability-top"><p class="capability-number">03</p><svg class="capability-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="12" cy="24" r="5" /><circle cx="36" cy="12" r="5" /><circle cx="36" cy="36" r="5" /><path d="M17 22l14-8M17 26l14 8" /></svg></div>
             <h3>Aviation services</h3>
             <p>Digital and operational capabilities for a more resilient, data-led aviation ecosystem.</p>
             <ul><li>Data & AI</li><li>Digital twins</li><li>MRO optimization</li></ul>
+            <a class="capability-link" href="#contact">Discuss a use case <span>&rarr;</span></a>
           </article>
         </div>
       </section>
@@ -85,26 +90,33 @@
           <p>We deliver hands-on change in complex aviation environments, where the stakes are high and the networks are interconnected.</p>
         </div>
         <div class="project-grid">
-          <article class="project project-large">
+          <article class="project project-large project-interactive active" data-reference="aurora" role="button" tabindex="0" aria-pressed="true">
             <p>Post-merger integration</p>
             <h3>Project<br />Aurora</h3>
             <span>Program governance, IT PMO, and commercial support for a leading European airline group.</span>
           </article>
-          <article class="project">
+          <article class="project project-interactive" data-reference="flight-plan" role="button" tabindex="0" aria-pressed="false">
             <p>Airline operations</p>
             <h3>Flight plan optimization</h3>
             <span>Tool implementation, provider selection, and process optimization for a major European airline.</span>
           </article>
-          <article class="project">
+          <article class="project project-interactive" data-reference="crm" role="button" tabindex="0" aria-pressed="false">
             <p>Customer & commercial</p>
             <h3>CRM transition</h3>
             <span>Passenger experience and servicing transformation as part of a post-merger integration.</span>
           </article>
         </div>
+        <article class="reference-detail" aria-live="polite">
+          <div><p class="eyebrow">Selected reference / <span id="reference-sector">Post-merger integration</span></p><h3 id="reference-title">Project Aurora</h3></div>
+          <p id="reference-summary">Program governance, IT PMO, and commercial support for a leading European airline group.</p>
+          <div class="reference-outcomes"><p class="detail-label">Delivery focus</p><ul id="reference-outcomes"><li>Integrated program governance</li><li>IT PMO and data-flow management</li><li>Commercial and ancillary support</li></ul></div>
+          <div class="reference-capabilities"><p class="detail-label">Capabilities</p><div id="reference-capabilities"><span>Program management</span><span>Integration</span><span>Commercial strategy</span></div></div>
+        </article>
       </section>
 
       <section id="team" class="section team">
-        <div class="team-header"><p class="eyebrow">03 / The team</p><h2>People who<br />speak aviation.</h2></div>
+        <div class="team-header"><p class="eyebrow">03 / The team</p><h2>People who<br />speak aviation.</h2><p>Filter the team by expertise or location, then explore each profile in more depth.</p></div>
+        <div class="team-filters" aria-label="Filter aviation team"><button class="team-filter active" data-filter="all">All</button><button class="team-filter" data-filter="commercial">Commercial</button><button class="team-filter" data-filter="operations">Operations</button><button class="team-filter" data-filter="airports">Airports</button><button class="team-filter" data-filter="frankfurt">Frankfurt</button><button class="team-filter" data-filter="other">Other locations</button></div>
         <div class="team-layout">
           <div class="team-list" role="tablist" aria-label="Aviation team members">
             <button class="team-member active" role="tab" aria-selected="true" data-person="philipp"><span>Philipp Schwarz</span><small>Partner / Practice Lead</small></button>
@@ -119,13 +131,21 @@
             <button class="team-member" role="tab" aria-selected="false" data-person="georgi"><span>Georgi Devrisashvili</span><small>Business Consultant</small></button>
             <button class="team-member" role="tab" aria-selected="false" data-person="valentin"><span>Valentin Heng</span><small>Business Consultant</small></button>
           </div>
-          <article class="team-profile" aria-live="polite">
-            <p class="profile-location">Frankfurt / Germany</p>
-            <img class="profile-photo" id="profile-photo" src="assets/philipp.png" alt="Portrait of Philipp Schwarz" />
-            <h3 id="profile-name">Philipp Schwarz</h3>
-            <p id="profile-role">Partner / Practice Lead</p>
-            <a class="profile-email" id="profile-email" href="mailto:philipp.schwarz@bearingpoint.com">philipp.schwarz@bearingpoint.com</a>
-          </article>
+          <div class="team-profile-stack">
+            <article class="team-profile" aria-live="polite">
+              <p class="profile-location">Frankfurt / Germany</p>
+              <img class="profile-photo" id="profile-photo" src="assets/philipp.png" alt="Portrait of Philipp Schwarz" />
+              <h3 id="profile-name">Philipp Schwarz</h3>
+              <p id="profile-role">Partner / Practice Lead</p>
+              <a class="profile-email" id="profile-email" href="mailto:philipp.schwarz@bearingpoint.com">philipp.schwarz@bearingpoint.com</a>
+              <button class="profile-expand" type="button" aria-expanded="false" aria-controls="profile-details">View profile <span>&darr;</span></button>
+            </article>
+            <section class="profile-details" id="profile-details" hidden>
+              <div><p class="detail-label">Focus</p><div class="profile-focus" id="profile-focus"><span>Airline commercial</span><span>Operations strategy</span><span>Integration</span></div></div>
+              <div><p class="detail-label">Relevant experience</p><p id="profile-experience">Business and technology consulting across airline commercial and operations functions, with a focus on integration, architecture, and transformation.</p></div>
+              <a class="profile-contact" id="profile-contact" href="mailto:philipp.schwarz@bearingpoint.com">Start a conversation <span>&rarr;</span></a>
+            </section>
+          </div>
         </div>
       </section>
 
