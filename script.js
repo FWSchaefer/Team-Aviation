@@ -5,6 +5,7 @@ const people = {
   julia: { name: "Julia Ortstadt", role: "Senior Business Consultant", location: "Frankfurt / Germany", email: "julia.ortstadt@bearingpoint.com", photo: "assets/julia.png" },
   jasmin: { name: "Jasmin Diederichs", role: "Senior Business Consultant", location: "D\u00fcsseldorf / Germany", email: "jasmin.diederichs@bearingpoint.com", photo: "assets/jasmin.png" },
   emilia: { name: "Emilia Zimmer", role: "Business Consultant", location: "Berlin / Germany", email: "emilia.zimmer@bearingpoint.com", photo: "assets/emilia.png" },
+  felix: { name: "Felix Schaefer", role: "Business Consultant", location: "Munich / Germany", email: "felixwolfgang.schaefer@bearingpoint.com", photo: "assets/felix.png" },
   florian: { name: "Florian Kuhn", role: "Business Consultant", location: "Stuttgart / Germany", email: "florian.kuhn@bearingpoint.com", photo: "assets/florian.png" },
   jonas: { name: "Jonas Sch\u00e4dlich", role: "Senior Business Consultant", location: "Frankfurt / Germany", email: "jonas.schaedlich@bearingpoint.com", photo: "assets/jonas.png" },
   valentin: { name: "Valentin Heng", role: "Business Consultant", location: "Frankfurt / Germany", email: "valentin.heng@bearingpoint.com", photo: "assets/valentin.png" },
