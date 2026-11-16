@@ -18,6 +18,7 @@ const navigation = document.querySelector(".navigation");
 document.querySelectorAll(".team-member").forEach((button) => {
   button.addEventListener("click", () => {
     const person = people[button.dataset.person];
+    profile.hidden = false;
     document.querySelectorAll(".team-member").forEach((member) => {
       member.classList.toggle("active", member === button);
       member.setAttribute("aria-selected", String(member === button));
