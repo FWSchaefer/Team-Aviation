@@ -1,14 +1,14 @@
 const people = {
-  philipp: { name: "Philipp Schwarz", role: "Partner / Practice Lead", location: "Frankfurt / Germany", initials: "PS", email: "philipp.schwarz@bearingpoint.com" },
-  chris: { name: "Chris Villmann", role: "Senior Manager", location: "Hamburg / Germany", initials: "CV", email: "chris.villmann@bearingpoint.com" },
-  lena: { name: "Lena Krutz", role: "Senior Manager", location: "Frankfurt / Germany", initials: "LK", email: "lena.krutz@bearingpoint.com" },
-  julia: { name: "Julia Ortstadt", role: "Senior Business Consultant", location: "Frankfurt / Germany", initials: "JO", email: "julia.ortstadt@bearingpoint.com" },
-  jasmin: { name: "Jasmin Diederichs", role: "Senior Business Consultant", location: "D\u00fcsseldorf / Germany", initials: "JD", email: "jasmin.diederichs@bearingpoint.com" },
-  emilia: { name: "Emilia Zimmer", role: "Business Consultant", location: "Berlin / Germany", initials: "EZ", email: "emilia.zimmer@bearingpoint.com" },
-  florian: { name: "Florian Kuhn", role: "Business Consultant", location: "Stuttgart / Germany", initials: "FK", email: "florian.kuhn@bearingpoint.com" },
-  jonas: { name: "Jonas Sch\u00e4dlich", role: "Senior Business Consultant", location: "Frankfurt / Germany", initials: "JS", email: "jonas.schaedlich@bearingpoint.com" },
-  valentin: { name: "Valentin Heng", role: "Business Consultant", location: "Frankfurt / Germany", initials: "VH", email: "valentin.heng@bearingpoint.com" },
-  georgi: { name: "Georgi Devrisashvili", role: "Business Consultant", location: "Frankfurt / Germany", initials: "GD", email: "georgi.devrisashvili@bearingpoint.com" }
+  philipp: { name: "Philipp Schwarz", role: "Partner / Practice Lead", location: "Frankfurt / Germany", email: "philipp.schwarz@bearingpoint.com", photo: "assets/philipp.jpg" },
+  chris: { name: "Chris Villmann", role: "Senior Manager", location: "Hamburg / Germany", email: "chris.villmann@bearingpoint.com", photo: "assets/chris.jpg" },
+  lena: { name: "Lena Krutz", role: "Senior Manager", location: "Frankfurt / Germany", email: "lena.krutz@bearingpoint.com", photo: "assets/lena.jpg" },
+  julia: { name: "Julia Ortstadt", role: "Senior Business Consultant", location: "Frankfurt / Germany", email: "julia.ortstadt@bearingpoint.com", photo: "assets/julia.jpg" },
+  jasmin: { name: "Jasmin Diederichs", role: "Senior Business Consultant", location: "D\u00fcsseldorf / Germany", email: "jasmin.diederichs@bearingpoint.com", photo: "assets/jasmin.jpg" },
+  emilia: { name: "Emilia Zimmer", role: "Business Consultant", location: "Berlin / Germany", email: "emilia.zimmer@bearingpoint.com", photo: "assets/emilia.jpg" },
+  florian: { name: "Florian Kuhn", role: "Business Consultant", location: "Stuttgart / Germany", email: "florian.kuhn@bearingpoint.com", photo: "assets/florian.jpg" },
+  jonas: { name: "Jonas Sch\u00e4dlich", role: "Senior Business Consultant", location: "Frankfurt / Germany", email: "jonas.schaedlich@bearingpoint.com", photo: "assets/jonas.jpg" },
+  valentin: { name: "Valentin Heng", role: "Business Consultant", location: "Frankfurt / Germany", email: "valentin.heng@bearingpoint.com", photo: "assets/valentin.jpg" },
+  georgi: { name: "Georgi Devrisashvili", role: "Business Consultant", location: "Frankfurt / Germany", email: "georgi.devrisashvili@bearingpoint.com", photo: "assets/georgi.jpg" }
 };
 
 const profile = document.querySelector(".team-profile");
@@ -23,7 +23,8 @@ document.querySelectorAll(".team-member").forEach((button) => {
       member.setAttribute("aria-selected", String(member === button));
     });
     profile.querySelector(".profile-location").textContent = person.location;
-    profile.querySelector(".profile-monogram").textContent = person.initials;
+    profile.querySelector("#profile-photo").src = person.photo;
+    profile.querySelector("#profile-photo").alt = `Portrait of ${person.name}`;
     profile.querySelector("#profile-name").textContent = person.name;
     profile.querySelector("#profile-role").textContent = person.role;
     profile.querySelector("#profile-email").href = `mailto:${person.email}`;
