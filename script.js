@@ -13,7 +13,7 @@ const people = {
 };
 
 const references = {
-  aurora: { sector: "Post-merger integration", title: "Project Aurora", summary: "Program governance, IT PMO, and commercial support for a leading European airline group.", outcomes: ["Integrated program governance", "IT PMO and data-flow management", "Commercial and ancillary support"], capabilities: ["Program management", "Integration", "Commercial strategy"] },
+  aurora: { sector: "Post-merger integration", title: "Airline integration PMO", summary: "Integrated governance, IT PMO, and commercial support across a 57-project airline program.", outcomes: ["Integration platform and governance", "IT PMO and data-flow management", "Commercial and operational alignment"], capabilities: ["Program management", "Integration", "Commercial strategy"] },
   "flight-plan": { sector: "Airline operations", title: "Flight plan optimization", summary: "Tool implementation, provider selection, and process optimization for a major European airline.", outcomes: ["Implementation roadmap and governance", "Provider selection and onboarding", "Optimized flight planning processes"], capabilities: ["Flight operations", "Transformation", "Project management"] },
   crm: { sector: "Customer and commercial", title: "CRM transition", summary: "Passenger experience and servicing transformation as part of a post-merger integration.", outcomes: ["Transition and cutover readiness", "Target passenger-service processes", "Cross-carrier stakeholder alignment"], capabilities: ["CRM", "Passenger experience", "Change management"] }
 };
@@ -105,7 +105,7 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 }));
 
 document.documentElement.classList.add("motion-ready");
-const revealTargets = document.querySelectorAll(".section-heading, .capability, .signal-copy, .signal-list, .work-header, .project, .reference-detail, .team-header, .team-filters, .team-list, .team-profile-stack, .contact > *");
+const revealTargets = document.querySelectorAll(".section-heading, .capability, .signal-copy, .signal-list, .offerings-header, .offering-card, .work-header, .project, .reference-detail, .team-header, .team-filters, .team-list, .team-profile-stack, .contact > *");
 revealTargets.forEach((element) => element.classList.add("reveal"));
 
 const observer = new IntersectionObserver((entries) => {
