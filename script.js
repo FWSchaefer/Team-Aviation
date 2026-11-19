@@ -105,7 +105,7 @@ navigation.querySelectorAll("a").forEach((link) => link.addEventListener("click"
 }));
 
 document.documentElement.classList.add("motion-ready");
-const revealTargets = document.querySelectorAll(".section-heading, .capability, .signal-copy, .signal-list, .offerings-header, .offering-card, .work-header, .project, .reference-detail, .team-header, .team-filters, .team-list, .team-profile-stack, .contact > *");
+const revealTargets = document.querySelectorAll(".section-heading, .capability, .ecosystem-heading, .ecosystem-card, .signal-copy, .signal-list, .offerings-header, .offering-card, .work-header, .project, .reference-detail, .team-header, .team-filters, .team-list, .team-profile-stack, .contact > *");
 revealTargets.forEach((element) => element.classList.add("reveal"));
 
 const observer = new IntersectionObserver((entries) => {
@@ -128,3 +128,12 @@ window.addEventListener("scroll", () => {
   });
   ticking = true;
 }, { passive: true });
+
+const navLinks = [...navigation.querySelectorAll("a[href^='#']")];
+const navSections = navLinks.map((link) => document.querySelector(link.getAttribute("href"))).filter(Boolean);
+const navObserver = new IntersectionObserver((entries) => {
+  const activeSection = entries.filter((entry) => entry.isIntersecting).sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+  if (!activeSection) return;
+  navLinks.forEach((link) => link.classList.toggle("active", link.getAttribute("href") === `#${activeSection.target.id}`));
+}, { rootMargin: "-30% 0px -55% 0px", threshold: [0.01, 0.25, 0.5] });
+navSections.forEach((section) => navObserver.observe(section));
