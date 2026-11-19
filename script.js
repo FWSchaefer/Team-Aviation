@@ -24,6 +24,7 @@ const profileExpand = document.querySelector(".profile-expand");
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
 const floatingBar = document.querySelector(".floating-bar");
+const siteHeader = document.querySelector(".site-header");
 const teamMembers = [...document.querySelectorAll(".team-member")];
 
 function setProfile(personKey) {
@@ -126,6 +127,7 @@ window.addEventListener("scroll", () => {
   window.requestAnimationFrame(() => {
     hero.style.setProperty("--hero-shift", `${Math.min(window.scrollY * 0.08, 44)}px`);
     floatingBar.classList.toggle("is-visible", window.scrollY > 420);
+    siteHeader.classList.toggle("is-scrolled", window.scrollY > 24);
     ticking = false;
   });
   ticking = true;
