@@ -23,6 +23,7 @@ const profileDetails = document.querySelector(".profile-details");
 const profileExpand = document.querySelector(".profile-expand");
 const menuButton = document.querySelector(".menu-toggle");
 const navigation = document.querySelector(".navigation");
+const floatingBar = document.querySelector(".floating-bar");
 const teamMembers = [...document.querySelectorAll(".team-member")];
 
 function setProfile(personKey) {
@@ -124,6 +125,7 @@ window.addEventListener("scroll", () => {
   if (ticking) return;
   window.requestAnimationFrame(() => {
     hero.style.setProperty("--hero-shift", `${Math.min(window.scrollY * 0.08, 44)}px`);
+    floatingBar.classList.toggle("is-visible", window.scrollY > 420);
     ticking = false;
   });
   ticking = true;
